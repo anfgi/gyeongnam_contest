@@ -1,0 +1,11 @@
+# Scripts and extracted temporary files
+*.ps1
+*.py
+extracted_hwpx/
+extracted_plan_text.txt
+extracted_hwp_text.txt
+temp_hwpx.zip
+
+# System files
+.DS_Store
+Thumbs.db
