@@ -29,6 +29,7 @@ export default async function handler(req, res) {
     const { phoneNumber, receiverName, relation, symptom, department, hospital } = body || {};
 
     const targetPhone = phoneNumber || '010-0000-0000';
+    const KAKAO_API_KEY = process.env.KAKAO_REST_API_KEY || 'ca67e3dc1096898795f38e4a711f0930';
 
     const messagePayload = {
       recipient: targetPhone,

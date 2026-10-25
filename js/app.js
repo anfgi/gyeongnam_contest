@@ -639,10 +639,10 @@ function initKakaoDispatch() {
   const btnSubmit = document.getElementById('btn-send-real-kakao');
   const btnShare = document.getElementById('btn-share-kakao-link');
 
-  // Initialize Kakao SDK with fallback public key if available
+  // Initialize Kakao SDK with user provided API key
   if (window.Kakao && !window.Kakao.isInitialized()) {
     try {
-      window.Kakao.init('8a816e89793160a22ff349a0e668fa64'); // Sample app key for Kakao Share
+      window.Kakao.init('ca67e3dc1096898795f38e4a711f0930');
     } catch (e) {
       console.warn("Kakao init:", e);
     }
@@ -767,11 +767,11 @@ window.triggerKakaoShareDirect = function() {
   }
 
   // Fallback to KakaoTalk Web Sharer URL or Mobile URL scheme
-  const shareUrl = `https://sharer.kakao.com/talk/friends/picker/link?app_key=8a816e89793160a22ff349a0e668fa64&validation_action=default&url=${encodeURIComponent(window.location.href)}`;
+  const shareUrl = `https://sharer.kakao.com/talk/friends/picker/link?app_key=ca67e3dc1096898795f38e4a711f0930&validation_action=default&url=${encodeURIComponent(window.location.href)}`;
   const popup = window.open(shareUrl, 'KakaoShare', 'width=450,height=650');
   if (!popup || popup.closed || typeof popup.closed === 'undefined') {
     // Popup blocked, open normal
-    window.location.href = `kakaolink://send?appkey=8a816e89793160a22ff349a0e668fa64&appver=1.0&apiver=3.0&linkver=4.0&type=link&url=${encodeURIComponent(window.location.href)}`;
+    window.location.href = `kakaolink://send?appkey=ca67e3dc1096898795f38e4a711f0930&appver=1.0&apiver=3.0&linkver=4.0&type=link&url=${encodeURIComponent(window.location.href)}`;
   }
 };
 
